@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "AspNetCore.SassCompiler.dll": "sha256-mQV815XW4AZ3DY7AjkxmWXcTJdng\/Uyx+Ne5llTivsI=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-P7\/HRwCqdk3q1MD7UtlAXMN\/E8gZRdzme6ESGZsXHNk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-72wt1Dncw5Whm9zUb3wanQSQBmY\/Ugu9fHEvX\/FtZ8s=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-E0\/WiiyuGn1me5bQB04\/7a\/PMnrIvan9wukL5Mkbpfw=",
@@ -23,6 +24,7 @@
       "Microsoft.Extensions.FileProviders.Abstractions.dll": "sha256-Zt6OY6gg\/1Tzt9oFOQBkezPvUVkFK4dyM6Pfk+MTUvg=",
       "Microsoft.Extensions.FileProviders.Physical.dll": "sha256-9xkIbIienaRj9Td2MyWYzL9JmVx6CKbGCPrvJ1Pxfn8=",
       "Microsoft.Extensions.FileSystemGlobbing.dll": "sha256-Gm0yiS5fySh2nZXdCRKZIbASK8sSukwjogLc+a9EBZY=",
+      "Microsoft.Extensions.Hosting.Abstractions.dll": "sha256-JSJA2FiaTFJpGj9YPdUqDPDqPAFeGbaE7SC46sHGZBg=",
       "Microsoft.Extensions.Logging.dll": "sha256-WMsuY8rhtg+vvssGFSR7ZLKhqYPAzOi538IXMoiJ6bI=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-7mzUlhcvGxpAVO4h\/Tka7P\/8IXF9ZsHkGt0fp5aufkU=",
       "Microsoft.Extensions.Options.dll": "sha256-gcHJrSv1wTqvF9SyWTEKcbiShn4mkgfnm9+tRQr4OqY=",
@@ -198,15 +200,15 @@
       "mscorlib.dll": "sha256-t1RT9mknsQ54H+sVa1vtMhjv3D8ZjiAGoLzHvuIObPw=",
       "netstandard.dll": "sha256-5SHKPh1PcuJjq4lIo7ymdIyhb9d3++oMAjr46auhUSc=",
       "System.Private.CoreLib.dll": "sha256-eH+XIsCUG5oZ0k8AIzNtRLTCLiV\/8Zv0RFCPMsIkdYY=",
-      "TaskManagerApp.Shared.dll": "sha256-sM5CXHbMGRHtvO8UdDteQan54\/LRvcAQhxWERPSzvKI=",
-      "TaskManagerApp.Client.dll": "sha256-TW15\/QmoQITY+6JEHurqsPRIjlAeZmQIAKl2JXiP50c="
+      "TaskManagerApp.Shared.dll": "sha256-w8PBEQt4g\/Ov\/UZVUoCdH31TecBnABtq8CkX13q74So=",
+      "TaskManagerApp.Client.dll": "sha256-3b81xvh48EucwM7eQDv5q014ur60PaFXx1ZBMwzMsnw="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "TaskManagerApp.Shared.pdb": "sha256-BT\/PH6MYuzfZTvFOFc8mKV3qkLZ60sZB8gqk2plInsc=",
-      "TaskManagerApp.Client.pdb": "sha256-FSTJwq0k19y0ISxQnZ+mqwN+82kNKRSUCfSOKaLRgmI="
+      "TaskManagerApp.Shared.pdb": "sha256-fBhvSizjoxZwZgA3DyaM0sVaIU1IzlaBUd+AbBgO5JU=",
+      "TaskManagerApp.Client.pdb": "sha256-5xUHoUIL\/+GjFxMayicejDJ\/ktvcLP3OU5DIRFmJR5A="
     },
     "runtime": {
       "dotnet.7.0.9.9lm1dpfob0.js": "sha256-dUIY5Mz0ozZWqtTfBb7ArJKbdh5IIp8BXeq6UjK4u\/c=",

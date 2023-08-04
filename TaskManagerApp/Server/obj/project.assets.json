@@ -2,6 +2,25 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AspNetCore.SassCompiler/1.64.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "3.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Options": "3.1.0"
+        },
+        "compile": {
+          "lib/net6.0/AspNetCore.SassCompiler.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AspNetCore.SassCompiler.dll": {}
+        },
+        "build": {
+          "build/AspNetCore.SassCompiler.props": {},
+          "build/AspNetCore.SassCompiler.targets": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -642,6 +661,25 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Logging/7.0.0": {
@@ -1455,6 +1493,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AspNetCore.SassCompiler": "1.64.2",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.9",
           "TaskManagerApp.Shared": "1.0.0"
         },
@@ -1468,6 +1507,9 @@
       "TaskManagerApp.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AspNetCore.SassCompiler": "1.64.2"
+        },
         "compile": {
           "bin/placeholder/TaskManagerApp.Shared.dll": {}
         },
@@ -1478,6 +1520,45 @@
     }
   },
   "libraries": {
+    "AspNetCore.SassCompiler/1.64.2": {
+      "sha512": "m9BpgNzx43BO+Bdpe7JTEytgIwrgSpG477SMjF1cvBFkFdiIHLvh3p/8G+P0MzT80kO0ML/Mj0aS57aY0e01jw==",
+      "type": "package",
+      "path": "aspnetcore.sasscompiler/1.64.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "aspnetcore.sasscompiler.1.64.2.nupkg.sha512",
+        "aspnetcore.sasscompiler.nuspec",
+        "build/AspNetCore.SassCompiler.props",
+        "build/AspNetCore.SassCompiler.targets",
+        "lib/net5.0/AspNetCore.SassCompiler.dll",
+        "lib/net6.0/AspNetCore.SassCompiler.dll",
+        "lib/netcoreapp3.1/AspNetCore.SassCompiler.dll",
+        "lib/netstandard2.0/AspNetCore.SassCompiler.Tasks.dll",
+        "logo.png",
+        "runtimes/linux-arm64/sass",
+        "runtimes/linux-arm64/src/LICENSE",
+        "runtimes/linux-arm64/src/dart",
+        "runtimes/linux-arm64/src/sass.snapshot",
+        "runtimes/linux-x64/sass",
+        "runtimes/linux-x64/src/LICENSE",
+        "runtimes/linux-x64/src/dart",
+        "runtimes/linux-x64/src/sass.snapshot",
+        "runtimes/osx-arm64/sass",
+        "runtimes/osx-arm64/src/LICENSE",
+        "runtimes/osx-arm64/src/dart",
+        "runtimes/osx-arm64/src/sass.snapshot",
+        "runtimes/osx-x64/sass",
+        "runtimes/osx-x64/src/LICENSE",
+        "runtimes/osx-x64/src/dart",
+        "runtimes/osx-x64/src/sass.snapshot",
+        "runtimes/win-x64/sass.bat",
+        "runtimes/win-x64/src/LICENSE",
+        "runtimes/win-x64/src/dart.exe",
+        "runtimes/win-x64/src/sass.snapshot"
+      ]
+    },
     "Azure.Core/1.24.0": {
       "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
@@ -2312,6 +2393,22 @@
         "microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
         "microsoft.extensions.filesystemglobbing.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/3.1.0": {
+      "sha512": "LiOP1ceFaPBxaE28SOjtORzOVCJk33TT5VQ/Cg5EoatZh1dxpPAgAV/0ruzWKQE7WAHU3F1H9Z6rFgsQwIb9uQ==",
+      "type": "package",
+      "path": "microsoft.extensions.hosting.abstractions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.nuspec",
+        "packageIcon.png"
       ]
     },
     "Microsoft.Extensions.Logging/7.0.0": {
@@ -4197,6 +4294,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AspNetCore.SassCompiler >= 1.64.2",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 7.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.9",
@@ -4257,6 +4355,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AspNetCore.SassCompiler": {
+            "target": "Package",
+            "version": "[1.64.2, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly.Server": {
             "target": "Package",
             "version": "[7.0.9, )"

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bJdtXIiXe7fQmojr/o5Nms56242JBzfzjo9Wn5OifWbUmyUUWVorcBSCiKNlLSlNISnmzxLKT9yn6PSotggsjw==",
+  "dgSpecHash": "nSQuIc1/btugvQxeddOsFUoceP6eLmBaB/hsMxTVMV0ofx+RtNcHnuv5hR/zx84KyXc+1a4iVCrcr7wpv2I7gA==",
   "success": true,
   "projectFilePath": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Server\\TaskManagerApp.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\emman\\.nuget\\packages\\aspnetcore.sasscompiler\\1.64.2\\aspnetcore.sasscompiler.1.64.2.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -39,6 +40,7 @@
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",

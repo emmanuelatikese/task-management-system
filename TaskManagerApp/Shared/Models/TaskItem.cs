@@ -10,8 +10,9 @@ namespace TaskManagerApp.Shared.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public bool IsCompleted { get; set; }
+        public bool IsCompleted { get; set; } = false;
 
-        public DateTime? Deadline { get; set; }
+        public string Organization { get; set; } = "personal";
+        public DateTime? Deadline { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
     }
 }

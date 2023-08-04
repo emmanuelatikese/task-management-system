@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pT3Z21LMRw1esm+/x6vtV9ehTDvMvzf+6oRToy4+3+E=",
+  "Hash": "9P/9wUM/1Z8lLFzwWK5+1d9IH7d8199pBIDac1yce00=",
   "Source": "TaskManagerApp.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AspNetCore.SassCompiler.dll",
+      "SourceId": "TaskManagerApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/AspNetCore.SassCompiler.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\emman\\.nuget\\packages\\aspnetcore.sasscompiler\\1.64.2\\lib\\net6.0\\AspNetCore.SassCompiler.dll"
+    },
     {
       "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "TaskManagerApp.Client",
@@ -457,6 +474,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\lib\\net7.0\\Microsoft.Extensions.FileSystemGlobbing.dll"
+    },
+    {
+      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Hosting.Abstractions.dll",
+      "SourceId": "TaskManagerApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Hosting.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\lib\\netcoreapp3.1\\Microsoft.Extensions.Hosting.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll",
@@ -3723,6 +3757,23 @@
       "OriginalItemSpec": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Runtime.Numerics.dll"
     },
     {
+      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\obj\\Debug\\net7.0\\build-gz\\0VVJ9o+q.gz",
+      "SourceId": "TaskManagerApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/AspNetCore.SassCompiler.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AspNetCore.SassCompiler.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\AspNetCore.SassCompiler.dll"
+    },
+    {
       "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\obj\\Debug\\net7.0\\build-gz\\14KqFoej.gz",
       "SourceId": "TaskManagerApp.Client",
       "SourceType": "Computed",
@@ -6305,6 +6356,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Windows.dll"
+    },
+    {
+      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\obj\\Debug\\net7.0\\build-gz\\Tje6oghw.gz",
+      "SourceId": "TaskManagerApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Hosting.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Hosting.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Hosting.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\obj\\Debug\\net7.0\\build-gz\\tL5lVLC4.gz",

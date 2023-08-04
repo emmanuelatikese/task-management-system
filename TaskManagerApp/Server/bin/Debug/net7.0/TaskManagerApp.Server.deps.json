@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "TaskManagerApp.Server/1.0.0": {
         "dependencies": {
+          "AspNetCore.SassCompiler": "1.64.2",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "7.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.9",
@@ -16,6 +17,20 @@
         },
         "runtime": {
           "TaskManagerApp.Server.dll": {}
+        }
+      },
+      "AspNetCore.SassCompiler/1.64.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "7.0.4",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Options": "7.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/AspNetCore.SassCompiler.dll": {
+            "assemblyVersion": "1.64.2.0",
+            "fileVersion": "1.64.2.0"
+          }
         }
       },
       "Azure.Core/1.24.0": {
@@ -369,6 +384,14 @@
         }
       },
       "Microsoft.Extensions.FileSystemGlobbing/7.0.0": {},
+      "Microsoft.Extensions.Hosting.Abstractions/3.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
+        }
+      },
       "Microsoft.Extensions.Logging/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -781,6 +804,7 @@
       },
       "TaskManagerApp.Client/1.0.0": {
         "dependencies": {
+          "AspNetCore.SassCompiler": "1.64.2",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.9",
           "TaskManagerApp.Shared": "1.0.0"
         },
@@ -789,6 +813,9 @@
         }
       },
       "TaskManagerApp.Shared/1.0.0": {
+        "dependencies": {
+          "AspNetCore.SassCompiler": "1.64.2"
+        },
         "runtime": {
           "TaskManagerApp.Shared.dll": {}
         }
@@ -800,6 +827,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AspNetCore.SassCompiler/1.64.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m9BpgNzx43BO+Bdpe7JTEytgIwrgSpG477SMjF1cvBFkFdiIHLvh3p/8G+P0MzT80kO0ML/Mj0aS57aY0e01jw==",
+      "path": "aspnetcore.sasscompiler/1.64.2",
+      "hashPath": "aspnetcore.sasscompiler.1.64.2.nupkg.sha512"
     },
     "Azure.Core/1.24.0": {
       "type": "package",
@@ -1045,6 +1079,13 @@
       "sha512": "sha512-2jONjKHiF+E92ynz2ZFcr9OvxIw+rTGMPEH+UZGeHTEComVav93jQUWGkso8yWwVBcEJGcNcZAaqY01FFJcj7w==",
       "path": "microsoft.extensions.filesystemglobbing/7.0.0",
       "hashPath": "microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LiOP1ceFaPBxaE28SOjtORzOVCJk33TT5VQ/Cg5EoatZh1dxpPAgAV/0ruzWKQE7WAHU3F1H9Z6rFgsQwIb9uQ==",
+      "path": "microsoft.extensions.hosting.abstractions/3.1.0",
+      "hashPath": "microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TaskManagerApp.Shared.Models
 {
-    internal class Status
+    public class Status
     {
+        public int StatusCode { get; set; }
+        public string Message { get; set; }
     }
 }

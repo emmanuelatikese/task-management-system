@@ -10,3 +10,11 @@ C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\refint\TaskManagerApp.Shared.dll
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.pdb
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\ref\TaskManagerApp.Shared.dll
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\win-x64\src\dart.exe
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\win-x64\src\sass.snapshot
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\linux-x64\sass
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\linux-arm64\sass
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\osx-x64\src\dart
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\osx-x64\src\sass.snapshot
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\osx-arm64\src\dart
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\runtimes\osx-arm64\src\sass.snapshot

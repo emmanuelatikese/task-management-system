@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "A4bhZamKR19Y+fw91S8XuZ+zuTe5KG2qOYDgmoeeFU2IxqWnhofDPG5unRh7p56vwPoNrz9qSW6CGLmbt2taxA==",
+  "dgSpecHash": "d8D0yL/SaRlNDmCJW9SGVBP1mCEN1KkMMFiaIg5Ptkqrfo8AHw5xMHtnmpZAioGqeJc0+sabHNBzupQ9apxySA==",
   "success": true,
   "projectFilePath": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\TaskManagerApp.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\emman\\.nuget\\packages\\aspnetcore.sasscompiler\\1.64.2\\aspnetcore.sasscompiler.1.64.2.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.9\\microsoft.aspnetcore.authorization.7.0.9.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.9\\microsoft.aspnetcore.components.7.0.9.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.9\\microsoft.aspnetcore.components.analyzers.7.0.9.nupkg.sha512",
@@ -22,6 +23,7 @@
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",

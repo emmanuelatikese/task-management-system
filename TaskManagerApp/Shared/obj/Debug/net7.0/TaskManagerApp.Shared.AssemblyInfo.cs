@@ -11,6 +11,9 @@
 using System;
 using System.Reflection;
 
+[assembly: AspNetCore.SassCompiler.SassCompilerAttribute("C:\\Users\\emman\\.nuget\\packages\\aspnetcore.sasscompiler\\1.64.2\\build\\..\\runtimes\\w" +
+    "in-x64\\src\\dart.exe", "C:\\Users\\emman\\.nuget\\packages\\aspnetcore.sasscompiler\\1.64.2\\build\\..\\runtimes\\w" +
+    "in-x64\\src\\sass.snapshot")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskManagerApp.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
