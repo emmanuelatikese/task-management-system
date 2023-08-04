@@ -1,6 +1,6 @@
 ﻿@page "/"
-@page "/task/add"
-@page "/task/getAll"
+@page "/Task"
+
 @using TaskManagerApp.Shared.Models
 @inject HttpClient http
 @using System.Net.Http.Json;
@@ -23,6 +23,7 @@
                 
             </div>
         </div>
+        
     </div>
 </nav>
 
@@ -52,12 +53,17 @@
                             </div>
                         </div>
 
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:120px;">
-                            
-                            <option value="1">Personal</option>
-                            <option value="2">Work</option>
-                            <option value="3">WishList</option>
-                        </select>
+                        <div class="holder">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:120px;">
+
+                                <option value="1">Personal</option>
+                                <option value="2">Work</option>
+                                <option value="3">WishList</option>
+                            </select>
+                            <Datepicker />
+
+                        </div>
+                        
 
                         <hr class="my-4">
 
@@ -154,7 +160,7 @@
             var newTask = new TaskItem { Title = taskname, IsCompleted = false };
             TaskList.Add(newTask);
 
-            var response = await http.PostAsJsonAsync("api/Task/AddTask", newTask);
+            var response = await http.PostAsJsonAsync("api/Task/AddTask/", newTask);
 
             if (response.IsSuccessStatusCode)
             {
@@ -216,7 +222,7 @@
     {
         try
         {
-            var response = await http.GetAsync("api/Task/GetTaskAll");
+            var response = await http.GetAsync("api/Task/GetTaskAll/GetAll");
 
             if (response.IsSuccessStatusCode)
             {

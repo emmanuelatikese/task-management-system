@@ -102,7 +102,7 @@ public IActionResult AddTask(TaskItem task)
             return Ok(task);
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IActionResult GetTaskAll()
         {
             var status = new Status();
