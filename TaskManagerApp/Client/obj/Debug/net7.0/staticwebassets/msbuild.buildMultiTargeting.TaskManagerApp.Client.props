@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TaskManagerApp.Client.props" />
+</Project>

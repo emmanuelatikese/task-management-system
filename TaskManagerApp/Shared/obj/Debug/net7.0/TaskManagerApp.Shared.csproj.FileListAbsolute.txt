@@ -1,0 +1,12 @@
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\TaskManagerApp.Shared.deps.json
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\TaskManagerApp.Shared.dll
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\bin\Debug\net7.0\TaskManagerApp.Shared.pdb
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.csproj.AssemblyReference.cache
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.AssemblyInfoInputs.cache
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.AssemblyInfo.cs
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.dll
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\refint\TaskManagerApp.Shared.dll
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\TaskManagerApp.Shared.pdb
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Shared\obj\Debug\net7.0\ref\TaskManagerApp.Shared.dll
