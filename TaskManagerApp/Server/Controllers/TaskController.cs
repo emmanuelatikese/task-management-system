@@ -6,7 +6,7 @@ using TaskManagerApp.Shared.Models;
 
 namespace TaskManagerApp.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TaskController : ControllerBase
     {
@@ -102,14 +102,14 @@ public IActionResult AddTask(TaskItem task)
             return Ok(task);
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public IActionResult GetTaskAll()
         {
             var status = new Status();
             var tasks = _ctx.Task.ToList();
-            var model = new Tasklist
+            var model = new TaskList
             {
-                Tasks = tasks
+                Tasklist = tasks
             };
             return Ok(model);
         }

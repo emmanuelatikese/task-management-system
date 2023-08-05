@@ -12,7 +12,7 @@ using TaskManagerApp.Server.Data;
 namespace TaskManagerApp.Server.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230804075244_init")]
+    [Migration("20230805074649_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -38,6 +38,10 @@ namespace TaskManagerApp.Server.Migrations
 
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Organization")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
