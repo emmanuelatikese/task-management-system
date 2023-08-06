@@ -237,20 +237,10 @@
     {
         var response = await http.DeleteAsync($"api/Task/DeleteTaskItem/{task.Id}");
 
+
         if (response.IsSuccessStatusCode)
         {
-            if (task.Organization == "personal")
-            {
-                personlist.PeraonItems.Remove(task);
-            }
-            else if (task.Organization == "work")
-            {
-                worklist.WorkItem.Remove(task);
-            }
-            else
-            {
-                wishlist.WishItems.Remove(task);
-            }
+
             var status = await response.Content.ReadFromJsonAsync<Status>();
             await OnInitializedAsync();
         }
