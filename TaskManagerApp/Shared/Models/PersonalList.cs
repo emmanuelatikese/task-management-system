@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TaskManagerApp.Shared.Models
 {
-    internal class PersonalList
+    public class PersonalList
     {
+        public List <TaskItem> PeraonItems { get; set; } = new List<TaskItem>();
     }
 }

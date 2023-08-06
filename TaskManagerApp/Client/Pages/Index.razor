@@ -6,7 +6,7 @@
 @using System.Net.Http.Json;
 @using System.Threading.Tasks;
 @using System.Text.Json;
-@using TaskManagerApp.Shared.JsonResponse;
+
 @using System;
 @using System.Collections.Generic;
 @using System.Linq;
@@ -109,7 +109,7 @@
                                         <div class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light">
                                             <p class="small mb-0">
                                                 <a href="#!" data-mdb-toggle="tooltip" title="Due on date">
-                                                    <i class="fas fa-hourglass-half me-2 text-warning"></i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" /><path fill="currentColor" d="M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22z" /></svg>
                                                 </a>
                                                 @item.Deadline
                                             </p>
@@ -118,15 +118,30 @@
                                     <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="d-flex flex-row justify-content-end mb-1">
                                             <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo">
-                                                <i class="fas fa-pencil-alt me-3"></i> 
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 512a32 32 0 1 1 64 0v352a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h352a32 32 0 0 1 0 64H192v640h640V512z" /><path fill="currentColor" d="m469.952 554.24l52.8-7.552L847.104 222.4a32 32 0 1 0-45.248-45.248L477.44 501.44l-7.552 52.8zm422.4-422.4a96 96 0 0 1 0 135.808l-331.84 331.84a32 32 0 0 1-18.112 9.088L436.8 623.68a32 32 0 0 1-36.224-36.224l15.104-105.6a32 32 0 0 1 9.024-18.112l331.904-331.84a96 96 0 0 1 135.744 0z" /></svg>
                                             </a>
-                                            <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
+                                            <a href="/" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo" @onclick="@(()=>DeleteTask(item))">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg>
+                                            </a>Fr
                                         </div>
                                         <div class="text-end text-muted">
                                             <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Organization">
-                                                <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>@item.Organization</p>
+                                                <p class="small mb-0">
+                                                    @if(item.Organization == "personal")
+                                                    {
+
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0Zm0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5H8Z" clip-rule="evenodd" /></svg>
+                                                    }
+                                                    else if(item.Organization == "work")
+                                                    {
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21V6h6V2h8v4h6v15H2Zm8-15h4V4h-4v2Z" /></svg>
+                                                    }
+                                                    else
+                                                    {
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 20h11v2H5m6-17h-1a2 2 0 0 0-2 2h5a2 2 0 0 0-2-2m5 3h6a2 2 0 0 1-2 2h-1a4 4 0 0 0-4 4v1a4 4 0 0 1-4 4h-1a4 4 0 0 1-4-4H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m2 2H4v3h2m13-8a2 2 0 0 1 2 2h1a2.9 2.9 0 0 0-3-3a2 2 0 0 1-2-2h-1a2.9 2.9 0 0 0 3 3" /></svg>
+                                                    }
+
+                                             @item.Organization</p>
                                             </a>
                                         </div>
                                     </li>
@@ -169,6 +184,7 @@
             {
                 taskname = "";
                 var status = await response.Content.ReadFromJsonAsync<Status>();
+                await OnInitializedAsync();
                 Console.WriteLine("it work.");
             }
             else
@@ -194,13 +210,14 @@
 
     }
 
-    public async Task DeleteTask(int id)
+    public async Task DeleteTask(TaskItem task)
     {
-        var response = await http.DeleteAsync($"api/Task/{id}");
+        var response = await http.DeleteAsync($"api/Task/DeleteTaskItem/{task.Id}");
 
         if (response.IsSuccessStatusCode)
         {
             var status = await response.Content.ReadFromJsonAsync<Status>();
+            await OnInitializedAsync();
         }
 
     }

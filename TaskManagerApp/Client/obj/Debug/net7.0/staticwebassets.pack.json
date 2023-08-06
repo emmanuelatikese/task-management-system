@@ -61,6 +61,14 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
+      "Id": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\delete.png",
+      "PackagePath": "staticwebassets\\delete.png"
+    },
+    {
+      "Id": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\editing.png",
+      "PackagePath": "staticwebassets\\editing.png"
+    },
+    {
       "Id": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

@@ -75,7 +75,7 @@ public IActionResult AddTask(TaskItem task)
 
         [HttpDelete("{id}")]
 
-        public IActionResult DeleteTask(int id)
+        public IActionResult DeleteTaskItem(int id)
         {
             var status = new Status();
             var person = _ctx.Task.Find(id);
@@ -101,6 +101,33 @@ public IActionResult AddTask(TaskItem task)
             var task = _ctx.Task.Find(id);
             return Ok(task);
         }
+
+
+        [HttpGet("Personal")]
+        public IActionResult GetAllPersonal()
+        {
+            var task = _ctx.Task.Where(t => t.Organization == "personal").ToList();
+            var model = new PersonalList { PeraonItems = task };
+            return Ok(task);
+        }
+
+        [HttpGet("work")]
+        public IActionResult GetAllWork()
+        {
+            var task = _ctx.Task.Where(t => t.Organization == "work").ToList();
+            var model = new Work { WorkItem = task };
+            return Ok(task);
+        }
+
+        [HttpGet("wishlist")]
+        public IActionResult GetAllWish()
+        {
+            var task = _ctx.Task.Where(t => t.Organization == "wishlist").ToList();
+            var model = new Wishlist { WishItems = task };
+            return Ok(task);
+        }
+
+
 
         [HttpGet]
         public IActionResult GetTaskAll()
