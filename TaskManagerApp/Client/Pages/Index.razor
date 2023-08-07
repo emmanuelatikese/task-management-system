@@ -43,14 +43,16 @@
                         </div>
 
                         <div class="holder">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:120px;" @onchange="@(SetOrganization)">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:120px;" 
+                            @onchange="@(SetOrganization)">
 
                                 <option value="personal">Personal</option>
                                 <option value="work">Work</option>
                                 <option value="wishlist">WishList</option>
                             </select>
                             
-                            <input type="datetime-local"  placeholder="Select Date and Time" class="Datepicker" style="padding:5px; border-radius:5px; border:none;" @bind="selectTimeDate" />
+                            <input type="datetime-local"  placeholder="Select Date and Time" class="Datepicker" 
+                            style="padding:5px; border-radius:5px; border:none;" @bind="selectTimeDate" />
                         </div>
                         
 
@@ -58,11 +60,11 @@
 
                         <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
                             <p class="small mb-0 me-2 text-muted">Filter</p>
-                            <select class="select">
-                                <option value="1">All</option>
-                                <option value="2">Completed</option>
-                                <option value="3">Active</option>
-                                <option value="4">Has due date</option>
+                            <select class="select" @onchange="@(SetSort)">
+                                <option value="all">All</option>
+                                <option value="completed">Completed</option>
+                                <option value="active">Active</option>
+                                <option value="hasduedate">Has due date</option>
                             </select>
                             
                             <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending">
@@ -71,7 +73,7 @@
                         </div>
                         @if (taskList?.Tasklist != null)
                         {
-                            @foreach (var item in taskList.Tasklist)
+                            @foreach (var item in taskList.Tasklist.OrderBy(task => task.IsCompleted == true))
                             {
                                 <ul class="list-group list-group-horizontal rounded-0">
                                     <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
@@ -161,12 +163,15 @@
     public Wishlist wishlist = new();
     public Work worklist = new();
 
+    public List<TaskItem> SortTask{ get; set; }
     public string val { get; set; } = "personal";
+    public string setSortVal { get; set; } = "all";
     public bool SetCompelete { get; set; } = false;
 
     public DateTime selectTimeDate { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
 
     public void SetOrganization(ChangeEventArgs e) => val = e.Value.ToString();
+    public void SetSort(ChangeEventArgs e) => setSortVal = e.Value.ToString();
 
     public async Task SetCheck(TaskItem task)
     {
@@ -293,10 +298,13 @@
     {
         try
         {
-            string response = "api/Task/GetTaskAll";
-            taskList = await http.GetFromJsonAsync<TaskList>(response);
-            await CheckDeadline(taskList);
+            
+                string response = "api/Task/GetTaskAll";
+                taskList = await http.GetFromJsonAsync<TaskList>(response);
 
+
+            await CheckDeadline(taskList);
+            
         }
         catch (Exception)
         {

@@ -201,14 +201,14 @@
       "netstandard.dll": "sha256-5SHKPh1PcuJjq4lIo7ymdIyhb9d3++oMAjr46auhUSc=",
       "System.Private.CoreLib.dll": "sha256-eH+XIsCUG5oZ0k8AIzNtRLTCLiV\/8Zv0RFCPMsIkdYY=",
       "TaskManagerApp.Shared.dll": "sha256-BgaXxvslL\/Xh07\/Fhz2i9z6YBxDmOH4arXpkI2nVDFM=",
-      "TaskManagerApp.Client.dll": "sha256-TYG5u+k77Ts+cawmCXGx5Y1pVsnBBl\/T+RYk8PAer0c="
+      "TaskManagerApp.Client.dll": "sha256-FEKX3Oxi9piWa1+N3datz7DCqpF5Ug4WXXQitHOpa7Y="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "TaskManagerApp.Shared.pdb": "sha256-95BKb2iDQBylXe\/lTPt0Rg0v7ik3Swp+momivwtAe0M=",
-      "TaskManagerApp.Client.pdb": "sha256-MvnPgOqjf4vETCD6V1oot7+1vzeL3DYayW07dranR18="
+      "TaskManagerApp.Client.pdb": "sha256-u46x4zplfArn928ulUGQNLes2+0u1gqi9K33V\/C8R14="
     },
     "runtime": {
       "dotnet.7.0.9.9lm1dpfob0.js": "sha256-dUIY5Mz0ozZWqtTfBb7ArJKbdh5IIp8BXeq6UjK4u\/c=",
