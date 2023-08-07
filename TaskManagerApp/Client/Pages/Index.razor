@@ -14,24 +14,7 @@
 
 <PageTitle>Home</PageTitle>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary " style="border-radius:10px;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Taskmanager</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/personal">Personal</a>
-                <a class="nav-link" href="/work">Work</a>
-                <a class="nav-link" href="/wishlist">WishList</a>
-                
-            </div>
-        </div>
-        
-    </div>
-</nav>
+<NavMenu/>
 
 
 <section class="vh-100">
@@ -81,11 +64,7 @@
                                 <option value="3">Active</option>
                                 <option value="4">Has due date</option>
                             </select>
-                            <p class="small mb-0 ms-4 me-2 text-muted">Sort</p>
-                            <select class="select">
-                                <option value="1">Added date</option>
-                                <option value="2">Due date</option>
-                            </select>
+                            
                             <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending">
                                 <i class="fas fa-sort-amount-down-alt ms-2"></i>
                             </a>
@@ -102,15 +81,25 @@
                                         </div>
                                     </li>
                                     <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                        <p class="lead fw-normal mb-0">@item.Title</p>
+                                        <p style="@((item.IsCompleted == true?"text-decoration:line-through;":""))" class="lead fw-normal mb-0">@item.Title</p>
                                     </li>
-                                    <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent">
-                                        <div class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light">
+                                    <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent" >
+                                        <div class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light" >
                                             <p class="small mb-0">
+                                                @if(item.IsActive == true)
+                                                {
+                                                    <a href="#!" data-mdb-toggle="tooltip" title="Time in progress" >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm0 26a12 12 0 0 1 0-24v12l8.481 8.481A11.963 11.963 0 0 1 16 28Z" /></svg>
+                                                    </a>
 
-                                                <a href="#!" data-mdb-toggle="tooltip" title="Due on date">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" /><path fill="currentColor" d="M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22z" /></svg>
+                                                }
+                                                else
+                                                {
+                                                    <a href="#!" data-mdb-toggle="tooltip" title="Time due" >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5A6.5 6.5 0 1 1 13.5 7a7.23 7.23 0 0 1-2 5" /><path d="m13.5 11.5l-2 .5l-.5-2M9 9L7 6.5H4" /></g></svg>
                                                 </a>
+                                                }
+
                                                 @item.Deadline
                                             </p>
                                         </div>
@@ -124,7 +113,7 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg>
                                             </a>
                                         </div>
-                                        <div class="text-end text-muted">
+                                        <div class="text-end text-muted" style="width:55px;">
                                             <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Organization">
                                                 <p class="small mb-0">
                                                     @if(item.Organization == "personal")
@@ -187,7 +176,7 @@
         try
         {
             task.IsCompleted = !task.IsCompleted;
-            var response = await http.PostAsJsonAsync("api/Task/AddTask", task);
+            var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", task);
             
            
         }
@@ -204,7 +193,7 @@
         if (!string.IsNullOrEmpty(taskname))
         {
 
-            TaskItem newTask = new TaskItem { Title = taskname, Organization = val, Deadline = selectTimeDate };
+            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate };
             taskList.Tasklist.Add(newTask);
             if (newTask.Organization == "personal")
             {
@@ -218,7 +207,7 @@
             {
                 wishlist.WishItems.Add(newTask);
             }
-            var response = await http.PostAsJsonAsync("api/Task/AddTask", newTask);
+            var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", newTask);
             
 
             if (response.IsSuccessStatusCode)
@@ -282,6 +271,10 @@
             return null;
         }
     }
+
+    
+
+
     protected override async Task OnInitializedAsync()
     {
         try

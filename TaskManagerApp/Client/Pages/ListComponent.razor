@@ -1,0 +1,150 @@
+﻿@using TaskManagerApp.Shared.Models
+@inject HttpClient http
+@using System.Net.Http.Json;
+@using System.Threading.Tasks;
+@using System.Text.Json;
+
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+
+
+
+@if (Organization?.Tasklist != null)
+{
+    @foreach (var item in Organization.Tasklist)
+    {
+        <ul class="list-group list-group-horizontal rounded-0">
+            <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                <div class="form-check">
+                    <input class="form-check-input me-0" type="checkbox" value="" id="flexCheckChecked2"
+                           aria-label="..." checked="@item.IsCompleted" @onchange="@(()=>SetCheck(item))" />
+                </div>
+            </li>
+            <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                <p style="@((item.IsCompleted == true?"text-decoration:line-through;":""))" class="lead fw-normal mb-0">@item.Title</p>
+            </li>
+            <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent">
+                <div class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light">
+                    <p class="small mb-0">
+                        @if (item.IsActive == true)
+                        {
+                            <a href="#!" data-mdb-toggle="tooltip" title="Time in progress">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm0 26a12 12 0 0 1 0-24v12l8.481 8.481A11.963 11.963 0 0 1 16 28Z" /></svg>
+                            </a>
+
+                        }
+                        else
+                        {
+                            <a href="#!" data-mdb-toggle="tooltip" title="Time due">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5A6.5 6.5 0 1 1 13.5 7a7.23 7.23 0 0 1-2 5" /><path d="m13.5 11.5l-2 .5l-.5-2M9 9L7 6.5H4" /></g></svg>
+                            </a>
+                        }
+
+                        @item.Deadline
+                    </p>
+                </div>
+            </li>
+            <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                <div class="d-flex flex-row justify-content-end mb-1">
+                    <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 512a32 32 0 1 1 64 0v352a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h352a32 32 0 0 1 0 64H192v640h640V512z" /><path fill="currentColor" d="m469.952 554.24l52.8-7.552L847.104 222.4a32 32 0 1 0-45.248-45.248L477.44 501.44l-7.552 52.8zm422.4-422.4a96 96 0 0 1 0 135.808l-331.84 331.84a32 32 0 0 1-18.112 9.088L436.8 623.68a32 32 0 0 1-36.224-36.224l15.104-105.6a32 32 0 0 1 9.024-18.112l331.904-331.84a96 96 0 0 1 135.744 0z" /></svg>
+                    </a>
+                    <a href="/" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo" @onclick="@(()=>DeleteTask(item))">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M12 12h2v12h-2zm6 0h2v12h-2z" /><path fill="currentColor" d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z" /></svg>
+                    </a>
+                </div>
+                <div class="text-end text-muted">
+                    <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Organization">
+                        <p class="small mb-0">
+                            @if (item.Organization == "personal")
+                            {
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0Zm0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5H8Z" clip-rule="evenodd" /></svg>
+                            }
+                            else if (item.Organization == "work")
+                            {
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21V6h6V2h8v4h6v15H2Zm8-15h4V4h-4v2Z" /></svg>
+                            }
+                            else
+                            {
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 20h11v2H5m6-17h-1a2 2 0 0 0-2 2h5a2 2 0 0 0-2-2m5 3h6a2 2 0 0 1-2 2h-1a4 4 0 0 0-4 4v1a4 4 0 0 1-4 4h-1a4 4 0 0 1-4-4H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m2 2H4v3h2m13-8a2 2 0 0 1 2 2h1a2.9 2.9 0 0 0-3-3a2 2 0 0 1-2-2h-1a2.9 2.9 0 0 0 3 3" /></svg>
+                            }
+
+                            @item.Organization
+                        </p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <p>No tasks available</p>
+}
+
+@code{
+
+    [Parameter]
+    public TaskList? Organization{ get; set; } 
+
+
+
+    public bool SetCompelete { get; set; } = false;
+
+
+
+
+
+    public async Task SetCheck(TaskItem task)
+    {
+        try
+        {
+            task.IsCompleted = !task.IsCompleted;
+            var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", task);
+
+
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+
+
+
+
+
+
+
+    public async Task DeleteTask(TaskItem task)
+    {
+        var response = await http.DeleteAsync($"api/Task/DeleteTaskItem/{task.Id}");
+
+
+        if (response.IsSuccessStatusCode)
+        {
+
+            var status = await response.Content.ReadFromJsonAsync<Status>();
+
+            await OnInitializedAsync();
+        }
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            string response = "api/Task/GetTaskAll";
+            Organization = await http.GetFromJsonAsync<TaskList>(response);
+        }
+        catch (Exception)
+        {
+
+        };
+    }
+}
+
+                             

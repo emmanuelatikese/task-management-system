@@ -19,7 +19,7 @@ namespace TaskManagerApp.Server.Controllers
         }
 
        [HttpPost]
-public IActionResult AddTask(TaskItem task)
+public IActionResult AddUpdateTask(TaskItem task)
 {
     var status = new Status();
 

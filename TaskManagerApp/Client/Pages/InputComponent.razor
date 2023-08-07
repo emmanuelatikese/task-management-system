@@ -1,0 +1,142 @@
+﻿@using TaskManagerApp.Shared.Models
+@inject HttpClient http
+@using System.Net.Http.Json;
+@using System.Threading.Tasks;
+@using System.Text.Json;
+
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+
+
+
+
+                        
+                        <div class="pb-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                       placeholder="Add new..." @bind="taskname">
+                                        <a href="#!" data-mdb-toggle="tooltip" title="Set due date">
+                                            <i class="fas fa-calendar-alt fa-lg me-3"></i>
+                                        </a>
+                                        <div>
+                                            <button type="button" class="btn btn-primary" @onclick="@(AddTask)">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="holder">
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:120px;" @onchange="@(SetOrganization)">
+
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="wishlist">WishList</option>
+                            </select>
+                            
+                            <input type="datetime-local"  placeholder="Select Date and Time" class="Datepicker" style="padding:5px; border-radius:5px; border:none;" @bind="selectTimeDate" />
+                        </div>
+                        
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
+                            <p class="small mb-0 me-2 text-muted">Filter</p>
+                            <select class="select">
+                                <option value="1">All</option>
+                                <option value="2">Completed</option>
+                                <option value="3">Active</option>
+                                <option value="4">Has due date</option>
+                            </select>
+                            
+                            <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending">
+                                <i class="fas fa-sort-amount-down-alt ms-2"></i>
+                            </a>
+                        </div>
+
+@code {
+
+    [Parameter] public string taskname{ get; set; }
+    public TaskList taskList = new();
+    public PersonalList personlist = new();
+    public Wishlist wishlist = new();
+    public Work worklist = new();
+
+    public string val { get; set; } = "personal";
+
+
+
+
+    public DateTime selectTimeDate { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
+
+    public void SetOrganization(ChangeEventArgs e)
+    {
+        val = e.Value.ToString();
+    }
+
+
+
+
+    public async Task AddTask()
+    {
+        if (!string.IsNullOrEmpty(taskname))
+        {
+
+            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate };
+            taskList.Tasklist.Add(newTask);
+            if (newTask.Organization == "personal")
+            {
+                personlist.PeraonItems.Add(newTask);
+            }
+            else if (newTask.Organization == "work")
+            {
+                worklist.WorkItem.Add(newTask);
+            }
+            else
+            {
+                wishlist.WishItems.Add(newTask);
+            }
+            var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", newTask);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                taskname = "";
+                var status = await response.Content.ReadFromJsonAsync<Status>();
+                await OnInitializedAsync();
+                Console.WriteLine("it work.");
+            }
+            else
+            {
+                Console.WriteLine("it didn't work");
+
+            }
+
+        }
+
+
+
+
+
+    }
+
+   
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            string response = "api/Task/GetTaskAll";
+            taskList = await http.GetFromJsonAsync<TaskList>(response);
+        }
+        catch (Exception)
+        {
+
+        };
+    }
+}

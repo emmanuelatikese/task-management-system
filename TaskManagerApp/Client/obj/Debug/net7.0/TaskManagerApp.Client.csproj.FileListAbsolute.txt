@@ -826,7 +826,6 @@ C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\scopedcss\bundle\TaskManagerApp.Client.styles.css
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\scopedcss\projectbundle\TaskManagerApp.Client.bundle.scp.css
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\TaskManagerApp.Client.csproj.CopyComplete
@@ -850,3 +849,4 @@ C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\bin
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\bin\Debug\net7.0\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\build-gz\0VVJ9o+q.gz
 C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\build-gz\Tje6oghw.gz
+C:\Users\emman\OneDrive\Desktop\task-management-system\TaskManagerApp\Client\obj\Debug\net7.0\scopedcss\Pages\NavMenu.razor.rz.scp.css
