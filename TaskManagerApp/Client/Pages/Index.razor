@@ -10,7 +10,7 @@
 @using System;
 @using System.Collections.Generic;
 @using System.Linq;
-@inject IJSRuntime JSRuntime;
+
 
 <PageTitle>Home</PageTitle>
 
@@ -60,12 +60,12 @@
 
                         <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
                             <p class="small mb-0 me-2 text-muted">Filter</p>
-                            <select class="select" @onchange="@(SetSort)">
+@*                            <select class="select" @onchange="@(SetSort)">
                                 <option value="all">All</option>
                                 <option value="completed">Completed</option>
                                 <option value="active">Active</option>
                                 <option value="hasduedate">Has due date</option>
-                            </select>
+                            </select>*@
                             
                             <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending">
                                 <i class="fas fa-sort-amount-down-alt ms-2"></i>
@@ -163,15 +163,18 @@
     public Wishlist wishlist = new();
     public Work worklist = new();
 
-    public List<TaskItem> SortTask{ get; set; }
+    //public string setSortVal { get; set; } = "all";
+    //public List<TaskItem> SortTask{ get; set; }
+    //public void SetSort(ChangeEventArgs e) => setSortVal = e.Value.ToString();
+
     public string val { get; set; } = "personal";
-    public string setSortVal { get; set; } = "all";
+
     public bool SetCompelete { get; set; } = false;
 
     public DateTime selectTimeDate { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
 
     public void SetOrganization(ChangeEventArgs e) => val = e.Value.ToString();
-    public void SetSort(ChangeEventArgs e) => setSortVal = e.Value.ToString();
+
 
     public async Task SetCheck(TaskItem task)
     {
