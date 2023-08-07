@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in personlist.PeraonItems)
+        @foreach (var item in personlist)
         
         {<tr>
             <th scope="row">@item.Id</th>
@@ -35,19 +35,30 @@
 
 
 @code {
-    public PersonalList personlist = new PersonalList();
+    public List<TaskItem> personlist = new ();
+    public TaskList taskList = new();
+
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            string response = "api/Task/GetAllPersonal/Personal";
-            personlist = await http.GetFromJsonAsync<PersonalList>(response);
-            Console.WriteLine(personlist);
+            string response = "api/Task/GetTaskAll";
+            taskList = await http.GetFromJsonAsync<TaskList>(response);
+            foreach(var item in taskList.Tasklist)
+            {
+                if(item.Organization == "personal")
+                {
+                    personlist.Add(item);
+                }
+            }
+
+
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            Console.WriteLine("Error: " + ex.Message);
-        }
+
+        };
     }
 }

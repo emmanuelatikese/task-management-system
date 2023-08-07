@@ -1,3 +1,66 @@
 ﻿@page "/workpage"
-<PageTitle>Work</PageTitle>
+@using System.Net.Http
+@using System.Threading.Tasks
+@using TaskManagerApp.Shared.Models
+@inject HttpClient http
 
+<PageTitle>Work</PageTitle>
+<NavMenu />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Complete</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in personlist)
+
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Title</td>
+                <td>@item.IsCompleted</td>
+                <td>@item.Deadline</td>
+                <td>@item.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+@code {
+    public List<TaskItem> personlist = new();
+    public TaskList taskList = new();
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            string response = "api/Task/GetTaskAll";
+            taskList = await http.GetFromJsonAsync<TaskList>(response);
+            foreach (var item in taskList.Tasklist)
+            {
+                if (item.Organization == "work")
+                {
+                    personlist.Add(item);
+                }
+            }
+
+
+        }
+        catch (Exception)
+        {
+
+        };
+    }
+}
