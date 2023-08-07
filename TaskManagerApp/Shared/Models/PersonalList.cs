@@ -8,6 +8,6 @@ namespace TaskManagerApp.Shared.Models
 {
     public class PersonalList
     {
-        public List <TaskItem> PeraonItems { get; set; } = new List<TaskItem>();
+        public List<TaskItem> PeraonItems { get; set; } = new List<TaskItem>();
     }
 }

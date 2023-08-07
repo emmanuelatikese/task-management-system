@@ -6,11 +6,11 @@
 @using System.Net.Http.Json;
 @using System.Threading.Tasks;
 @using System.Text.Json;
-
+@using System.Timers;
 @using System;
 @using System.Collections.Generic;
 @using System.Linq;
-
+@inject IJSRuntime JSRuntime;
 
 <PageTitle>Home</PageTitle>
 
@@ -166,10 +166,7 @@
 
     public DateTime selectTimeDate { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
 
-    public void SetOrganization(ChangeEventArgs e)
-    {
-        val =  e.Value.ToString();
-    }
+    public void SetOrganization(ChangeEventArgs e) => val = e.Value.ToString();
 
     public async Task SetCheck(TaskItem task)
     {
@@ -177,12 +174,12 @@
         {
             task.IsCompleted = !task.IsCompleted;
             var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", task);
-            
-           
+
+
         }
         catch (Exception)
         {
-            
+
         }
     }
 
@@ -208,11 +205,11 @@
                 wishlist.WishItems.Add(newTask);
             }
             var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", newTask);
-            
+
 
             if (response.IsSuccessStatusCode)
             {
-                
+
                 taskname = "";
                 var status = await response.Content.ReadFromJsonAsync<Status>();
                 await OnInitializedAsync();
@@ -240,6 +237,21 @@
         }
 
 
+    }
+
+
+
+
+    public async Task CheckDeadline(TaskList tasklist)
+    {
+        foreach(var item in tasklist.Tasklist)
+        {
+            if(item.Deadline < DateTime.Now)
+            {
+                item.IsActive = false;
+                var response = await http.PostAsJsonAsync("api/Task/AddUpdateTask", item);
+            }
+        }
     }
 
     public async Task DeleteTask(TaskItem task)
@@ -272,7 +284,9 @@
         }
     }
 
-    
+
+
+
 
 
     protected override async Task OnInitializedAsync()
@@ -281,6 +295,8 @@
         {
             string response = "api/Task/GetTaskAll";
             taskList = await http.GetFromJsonAsync<TaskList>(response);
+            await CheckDeadline(taskList);
+
         }
         catch (Exception)
         {
