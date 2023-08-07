@@ -12,7 +12,6 @@
 @using System.Linq;
 
 
-
 <PageTitle>Home</PageTitle>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary " style="border-radius:10px;">
@@ -67,8 +66,8 @@
                                 <option value="work">Work</option>
                                 <option value="wishlist">WishList</option>
                             </select>
-
-
+                            
+                            <input type="datetime-local"  placeholder="Select Date and Time" class="Datepicker" style="padding:5px; border-radius:5px; border:none;" @bind="selectTimeDate" />
                         </div>
                         
 
@@ -99,7 +98,7 @@
                                     <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="form-check">
                                             <input class="form-check-input me-0" type="checkbox" value="" id="flexCheckChecked2"
-                                                   aria-label="..." />
+                                                   aria-label="..." checked="@item.IsCompleted" @onchange="@(()=>SetCheck(item))" />
                                         </div>
                                     </li>
                                     <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
@@ -108,6 +107,7 @@
                                     <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent">
                                         <div class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light">
                                             <p class="small mb-0">
+
                                                 <a href="#!" data-mdb-toggle="tooltip" title="Due on date">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12Z" /><path fill="currentColor" d="M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22z" /></svg>
                                                 </a>
@@ -173,18 +173,38 @@
     public Work worklist = new();
 
     public string val { get; set; } = "personal";
+    public bool SetCompelete { get; set; } = false;
+
+    public DateTime selectTimeDate { get; set; } = DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0));
 
     public void SetOrganization(ChangeEventArgs e)
     {
         val =  e.Value.ToString();
     }
 
+    public async Task SetCheck(TaskItem task)
+    {
+        try
+        {
+            task.IsCompleted = !task.IsCompleted;
+            var response = await http.PostAsJsonAsync("api/Task/AddTask", task);
+            
+           
+        }
+        catch (Exception)
+        {
+            
+        }
+    }
+
+
+
     public async Task AddTask()
     {
         if (!string.IsNullOrEmpty(taskname))
         {
 
-            TaskItem newTask = new TaskItem { Title = taskname, Organization=val};
+            TaskItem newTask = new TaskItem { Title = taskname, Organization = val, Deadline = selectTimeDate };
             taskList.Tasklist.Add(newTask);
             if (newTask.Organization == "personal")
             {
@@ -249,7 +269,7 @@
 
     public async Task<TaskItem> GetTaskById(int id)
     {
-        var response = await http.GetAsync($"api/Task/{id}");
+        var response = await http.GetAsync($"api/Task/GetTaskById/{id}");
 
         if (response.IsSuccessStatusCode)
         {

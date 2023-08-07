@@ -20,7 +20,8 @@ namespace TaskManagerApp.Server.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsCompleted = table.Column<bool>(type: "bit", nullable: false),
                     Organization = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Deadline = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Deadline = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IaActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

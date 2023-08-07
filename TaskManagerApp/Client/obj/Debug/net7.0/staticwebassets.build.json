@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wChdm7IZeQrKQra5rX6bpnY+1gl0H7P7gKhVPKt5064=",
+  "Hash": "9P/9wUM/1Z8lLFzwWK5+1d9IH7d8199pBIDac1yce00=",
   "Source": "TaskManagerApp.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7240,40 +7240,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
-    },
-    {
-      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\delete.png",
-      "SourceId": "TaskManagerApp.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "delete.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\delete.png"
-    },
-    {
-      "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\editing.png",
-      "SourceId": "TaskManagerApp.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "editing.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\editing.png"
     },
     {
       "Identity": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Client\\wwwroot\\favicon.png",

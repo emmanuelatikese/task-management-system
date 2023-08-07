@@ -12,7 +12,7 @@ using TaskManagerApp.Server.Data;
 namespace TaskManagerApp.Server.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230805074649_init")]
+    [Migration("20230807001030_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -35,6 +35,9 @@ namespace TaskManagerApp.Server.Migrations
 
                     b.Property<DateTime?>("Deadline")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IaActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
