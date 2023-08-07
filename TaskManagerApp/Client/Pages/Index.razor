@@ -73,7 +73,7 @@
                         </div>
                         @if (taskList?.Tasklist != null)
                         {
-                            @foreach (var item in taskList.Tasklist.OrderBy(task => task.IsCompleted == true))
+                            @foreach (var item in taskList.Tasklist)
                             {
                                 <ul class="list-group list-group-horizontal rounded-0">
                                     <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
