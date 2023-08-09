@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gjp0c8fGec4oux/6fWgzU4VovSanvqXbuACdTc0f08nhfBUoq7bHFY2i87kM0951tJ7q+46Ebz6IwB2rKfiB3g==",
+  "dgSpecHash": "l6LRSgpaATEp/plmDsoJB3UaDh6FNx/yWKHyFsiQOWcwVD5tZ9AUXtWcSg5BXk1ot4EBcFkIWV4a+CGq0qTRsg==",
   "success": true,
   "projectFilePath": "C:\\Users\\emman\\OneDrive\\Desktop\\task-management-system\\TaskManagerApp\\Shared\\TaskManagerApp.Shared.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,22 @@
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
-    "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512"
+    "C:\\Users\\emman\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.console\\3.16.3\\nunit.console.3.16.3.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.consolerunner\\3.16.3\\nunit.consolerunner.3.16.3.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.extension.nunitprojectloader\\3.6.0\\nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.extension.nunitv2driver\\3.9.0\\nunit.extension.nunitv2driver.3.9.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.extension.nunitv2resultwriter\\3.6.0\\nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.extension.teamcityeventlistener\\1.0.7\\nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit.extension.vsprojectloader\\3.8.0\\nunit.extension.vsprojectloader.3.8.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\selenium.support\\4.11.0\\selenium.support.4.11.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\selenium.webdriver\\4.11.0\\selenium.webdriver.4.11.0.nupkg.sha512",
+    "C:\\Users\\emman\\.nuget\\packages\\selenium.webdriver.chromedriver\\115.0.5790.17000\\selenium.webdriver.chromedriver.115.0.5790.17000.nupkg.sha512"
   ],
   "logs": []
 }

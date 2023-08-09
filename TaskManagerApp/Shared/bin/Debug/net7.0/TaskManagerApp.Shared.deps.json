@@ -8,7 +8,15 @@
     ".NETCoreApp,Version=v7.0": {
       "TaskManagerApp.Shared/1.0.0": {
         "dependencies": {
-          "AspNetCore.SassCompiler": "1.64.2"
+          "AspNetCore.SassCompiler": "1.64.2",
+          "NUnit": "3.13.3",
+          "NUnit.Console": "3.16.3",
+          "NUnit.ConsoleRunner": "3.16.3",
+          "NUnit.Extension.NUnitV2Driver": "3.9.0",
+          "NUnit3TestAdapter": "4.5.0",
+          "Selenium.Support": "4.11.0",
+          "Selenium.WebDriver": "4.11.0",
+          "Selenium.WebDriver.ChromeDriver": "115.0.5790.17000"
         },
         "runtime": {
           "TaskManagerApp.Shared.dll": {}
@@ -121,7 +129,72 @@
             "fileVersion": "3.100.19.56504"
           }
         }
-      }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "NUnit/3.13.3": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "assemblyVersion": "3.13.3.0",
+            "fileVersion": "3.13.3.0"
+          }
+        }
+      },
+      "NUnit.Console/3.16.3": {
+        "dependencies": {
+          "NUnit.ConsoleRunner": "3.16.3",
+          "NUnit.Extension.NUnitProjectLoader": "3.6.0",
+          "NUnit.Extension.NUnitV2Driver": "3.9.0",
+          "NUnit.Extension.NUnitV2ResultWriter": "3.6.0",
+          "NUnit.Extension.TeamCityEventListener": "1.0.7",
+          "NUnit.Extension.VSProjectLoader": "3.8.0"
+        }
+      },
+      "NUnit.ConsoleRunner/3.16.3": {},
+      "NUnit.Extension.NUnitProjectLoader/3.6.0": {},
+      "NUnit.Extension.NUnitV2Driver/3.9.0": {},
+      "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {},
+      "NUnit.Extension.TeamCityEventListener/1.0.7": {},
+      "NUnit.Extension.VSProjectLoader/3.8.0": {},
+      "NUnit3TestAdapter/4.5.0": {},
+      "Selenium.Support/4.11.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.11.0"
+        },
+        "runtime": {
+          "lib/net6.0/WebDriver.Support.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.11.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver.ChromeDriver/115.0.5790.17000": {}
     }
   },
   "libraries": {
@@ -199,6 +272,111 @@
       "sha512": "sha512-LEKAnX7lhUhSoIc2XraCTK3M4IU/LdVUzCe464Sa4+7F4ZJuXHHRzZli2mDbiT4xzAZhgqXbvfnb5+CNDcQFfg==",
       "path": "microsoft.extensions.primitives/3.1.0",
       "hashPath": "microsoft.extensions.primitives.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "path": "netstandard.library/2.0.0",
+      "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "NUnit/3.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KNPDpls6EfHwC3+nnA67fh5wpxeLb3VLFAfLxrug6JMYDLHH6InaQIWR7Sc3y75d/9IKzMksH/gi08W7XWbmnQ==",
+      "path": "nunit/3.13.3",
+      "hashPath": "nunit.3.13.3.nupkg.sha512"
+    },
+    "NUnit.Console/3.16.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xLk1aH857DzkrTff35FLcZSUQ0AyWOovJWqv1VMA47ItlyfrDPUyryKcWY9h+DZrz/FOgiiBzsPSDxnDPnYgSw==",
+      "path": "nunit.console/3.16.3",
+      "hashPath": "nunit.console.3.16.3.nupkg.sha512"
+    },
+    "NUnit.ConsoleRunner/3.16.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bhc4f0oVdS70xLaulPu2dMuUWK6hLj5fWLWmUnvbxyEA9w41sZNe6Xb3vPkcp+5OrIqggmtcRbhX+o5hoz62Jg==",
+      "path": "nunit.consolerunner/3.16.3",
+      "hashPath": "nunit.consolerunner.3.16.3.nupkg.sha512"
+    },
+    "NUnit.Extension.NUnitProjectLoader/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ev2+dCJShMNIATkYNm/vHEuieBfbismr9DcUfBvafJZf5vNyugXPuMXO/MaOFcJaoW9j6/zjMmXKG7R5umWzXA==",
+      "path": "nunit.extension.nunitprojectloader/3.6.0",
+      "hashPath": "nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512"
+    },
+    "NUnit.Extension.NUnitV2Driver/3.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h4sqAl2dBh+PpClkYB5cCkfDtTitC0sZeFEf6j0Bmk8yrc8lN7dpQ67QFnlf0FnyspI409QVf6uM+7gPXzJ8+w==",
+      "path": "nunit.extension.nunitv2driver/3.9.0",
+      "hashPath": "nunit.extension.nunitv2driver.3.9.0.nupkg.sha512"
+    },
+    "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P/Nc+wgFRe3dT59/VjhiIT0SWfLMbb/Vc9AtBU3L71VOCs8zQnuNjCOEFLQL/Mq6XSaZeB2Sug9tUgTfCnQk9w==",
+      "path": "nunit.extension.nunitv2resultwriter/3.6.0",
+      "hashPath": "nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512"
+    },
+    "NUnit.Extension.TeamCityEventListener/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bw+ZwHsUmxqb9leo91qLEF7ggtdpawY2V6wNqHI6+ATa2SHxHxoxiV5UV07ZWDRpf/qlQJELNlZu7wIB3+w2qQ==",
+      "path": "nunit.extension.teamcityeventlistener/1.0.7",
+      "hashPath": "nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512"
+    },
+    "NUnit.Extension.VSProjectLoader/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CIScV9a7+wUu6Ylb+WO0q/WGWQVoB05TUj3XZHa1CO+2BInDdfIVkqtlrSguhy6D/AGIMaLVrCZpQkQ2m0bbzQ==",
+      "path": "nunit.extension.vsprojectloader/3.8.0",
+      "hashPath": "nunit.extension.vsprojectloader.3.8.0.nupkg.sha512"
+    },
+    "NUnit3TestAdapter/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A==",
+      "path": "nunit3testadapter/4.5.0",
+      "hashPath": "nunit3testadapter.4.5.0.nupkg.sha512"
+    },
+    "Selenium.Support/4.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PR7ssrG9peQ5AqPSNvOJ846FFOX1wSv5eV3/8zvYwf0jhNx2bEprBZbtYMSWtht+HXtC5xb6atRQLlpKD+FETQ==",
+      "path": "selenium.support/4.11.0",
+      "hashPath": "selenium.support.4.11.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V8o+Nvi9/3Ix12ZzMGg+fI7sfu+HrflZkMGq8Orr+j0INbfpEEyM6KR9oaaHlm0WUXcn7dTYwyWrJxYsi6eniw==",
+      "path": "selenium.webdriver/4.11.0",
+      "hashPath": "selenium.webdriver.4.11.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver.ChromeDriver/115.0.5790.17000": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P24Cc2wcL4hXyWJ4G5ZvAA7nqQ+e5Nj/RZE+vqgY0NBDnW5ypwcPtBN1oF+qRewOB6yoNKnT8y27ZsO325Q7+g==",
+      "path": "selenium.webdriver.chromedriver/115.0.5790.17000",
+      "hashPath": "selenium.webdriver.chromedriver.115.0.5790.17000.nupkg.sha512"
     }
   }
 }

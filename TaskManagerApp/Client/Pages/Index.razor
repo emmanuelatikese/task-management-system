@@ -17,6 +17,9 @@
 <NavMenu/>
 
 
+<h1>Hi, Welcome...</h1>
+
+
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -52,11 +55,14 @@
                             </select>
                             
                             <input type="datetime-local"  placeholder="Select Date and Time" class="Datepicker" 
-                            style="padding:5px; border-radius:5px; border:none;" @bind="selectTimeDate" />
+                            style="padding:5px; border-radius:5px; border:none;" @bind-value="selectTimeDate" />
                         </div>
                         
 
                         <hr class="my-4">
+
+                        <p style="font-weight:bold;">Number of list(s): @(taskList.Tasklist.Count())</p>
+
 
                         <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
                             @*<p class="small mb-0 me-2 text-muted">Filter</p>*@
@@ -108,7 +114,7 @@
                                     </li>
                                     <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="d-flex flex-row justify-content-end mb-1">
-                                            <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo">
+                                            <a href="/Edit-pop/@(item.Id)" class="text-info" data-mdb-toggle="tooltip" title="Edit todo">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 512a32 32 0 1 1 64 0v352a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h352a32 32 0 0 1 0 64H192v640h640V512z" /><path fill="currentColor" d="m469.952 554.24l52.8-7.552L847.104 222.4a32 32 0 1 0-45.248-45.248L477.44 501.44l-7.552 52.8zm422.4-422.4a96 96 0 0 1 0 135.808l-331.84 331.84a32 32 0 0 1-18.112 9.088L436.8 623.68a32 32 0 0 1-36.224-36.224l15.104-105.6a32 32 0 0 1 9.024-18.112l331.904-331.84a96 96 0 0 1 135.744 0z" /></svg>
                                             </a>
                                             <a href="/" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo" @onclick="@(()=>DeleteTask(item))">
@@ -198,7 +204,7 @@
         if (!string.IsNullOrEmpty(taskname))
         {
 
-            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate };
+            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate < DateTime.Now ? DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0)) : selectTimeDate };
             taskList.Tasklist.Add(newTask);
             if (newTask.Organization == "personal")
             {
