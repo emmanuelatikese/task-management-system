@@ -43,11 +43,6 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>
-        window.startDeadlineChecking = (dotNetObjRef) => {
-            setInterval(() => {
-                dotNetObjRef.invokeMethodAsync("UpdateTaskDeadlines");
-            }, 1000); 
-        };
 
 
     </script>

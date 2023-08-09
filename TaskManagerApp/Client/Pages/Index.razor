@@ -32,13 +32,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex flex-row align-items-center">
-                                        <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                                        <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" 
                                                placeholder="Add new..." @bind="taskname">
                                         <a href="#!" data-mdb-toggle="tooltip" title="Set due date">
                                             <i class="fas fa-calendar-alt fa-lg me-3"></i>
                                         </a>
                                         <div>
-                                            <button type="button" class="btn btn-primary" @onclick="@(AddTask)">Add</button>
+                                            <button type="button" class="btn btn-primary" @onclick="@(AddTask)" id="InputAdd">Add</button>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +204,7 @@
         if (!string.IsNullOrEmpty(taskname))
         {
 
-            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate < DateTime.Now ? DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0)) : selectTimeDate };
+            TaskItem newTask = new TaskItem { Title = char.ToUpper(taskname[0]) + taskname.Substring(1), Organization = val, Deadline = selectTimeDate <  DateTime.Now ?  DateTime.Today.AddDays(1).Add(new TimeSpan(0, 0, 0)) : selectTimeDate };
             taskList.Tasklist.Add(newTask);
             if (newTask.Organization == "personal")
             {

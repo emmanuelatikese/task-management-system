@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerApp.Client", "Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManagerApp.Shared", "Shared\TaskManagerApp.Shared.csproj", "{6E85A3C4-BF91-44BB-BFBD-0C651C125EC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{F91C0441-8C19-4548-B2FF-8E5D7CAC277F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMangerTesting", "TaskMangerTesting\TaskMangerTesting.csproj", "{CEB40A40-0792-4318-9A8F-7F37BD5D6624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{6E85A3C4-BF91-44BB-BFBD-0C651C125EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E85A3C4-BF91-44BB-BFBD-0C651C125EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E85A3C4-BF91-44BB-BFBD-0C651C125EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB40A40-0792-4318-9A8F-7F37BD5D6624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB40A40-0792-4318-9A8F-7F37BD5D6624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB40A40-0792-4318-9A8F-7F37BD5D6624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB40A40-0792-4318-9A8F-7F37BD5D6624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEB40A40-0792-4318-9A8F-7F37BD5D6624} = {F91C0441-8C19-4548-B2FF-8E5D7CAC277F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DACEEF2A-1BA3-4F25-B064-3E800D3DF65D}
